@@ -14,7 +14,7 @@ public class WriteData {
 
 	public void writeExcel () throws IOException {
 		
-		String path = "C:\\Users\\Atul\\Desktop\\AccountData.xlsx";
+		String path = "C:\\Users\\Atul\\git\\EclipsePullPush\\ExcelReadWrite\\Data\\TestData.xlsx";
 		
 		File file = new File (path);
 		
@@ -22,13 +22,13 @@ public class WriteData {
 		
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		
-		XSSFSheet sheet = wb.getSheet("info");
+		XSSFSheet sh = wb.getSheet("info");
 		
 		File fout = new File(path);
 		
 		FileOutputStream fos = new FileOutputStream(fout);
 	
-		sheet.getRow(0).getCell(2).setCellValue("autowrite");
+		sh.getRow(5).getCell(0).setCellValue("test");
 		
 		wb.write(fos);
 		
@@ -40,4 +40,6 @@ public class WriteData {
 		WriteData wd = new WriteData();
 		wd.writeExcel();
 	}
+	// copy from folder paste in project data file
+	// right click on data file properties and copy file path
 }
